@@ -5,12 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>RHEUM-COLORS</title>
         <link rel="icon" type="image/x-icon" href="Icono_Logo.ico">
-        <header class="encabezado">
-            <a href="file:///D:/RHEUM-COLORS/Lobby.html">
-                <img src="Logo.png" alt="Logo de Rheum-Colors" width="50px">
-            </a> 
-            <h1> RHEUM-COLORS </h1>
-        </header>
     </head>
 
     <style>
@@ -84,6 +78,7 @@
     
         .carousel-container {
             width: 100%;
+            display: flex;
             max-width: 800px;
             margin: 0 auto;
             overflow: hidden;
@@ -100,10 +95,11 @@
     
         .carousel-slide img {
             width: 100%;
+            flex-shrink: 0;
+            object-fit: cover;
             display: block;
         }
     
-        /* --- Botones --- */
         .botones {
             text-align: center;
         }
@@ -122,9 +118,28 @@
         button:hover {
             background-color: #555;
         }
+
+        .carousel-slide a {
+            min-width: 100%;
+            display: block;
+            line-height: 0; /* Elimina espacios extra debajo de la imagen */
+        }   
+
+        .carousel-slide img, 
+        .carousel-slide a img {
+            width: 100%;
+            display: block;
+            flex-shrink: 0;
+        }
     </style>
 
     <body>
+        <header class="encabezado">
+            <a href="index.html">
+                <img src="img/Logo.png" alt="Logo de Rheum-Colors" width="50px">
+            </a> 
+            <h1> RHEUM-COLORS </h1>
+        </header>
         <div class="margenInt">
             <div class="lista">
                 <div class="Filas">
@@ -134,10 +149,11 @@
 
                     <div class="carousel-container">
                         <div class="carousel-slide">
-                            <img src="Materia Prima.png" alt="Raiz de Ruibarbo">
-                            <img src="Gama de Colores.png" alt="Gama de Colores">
-                            <img src="Instrucciones de Uso.png" alt="Instrucciones de Uso">
-                            <img src="Conocenos.png" alt="Conocenos">
+                            <a href="MateriaPrima.html">
+                                <img src="img/MateriaPrima.png" alt="Raiz de Ruibarbo"></a>
+                            <img src="img/GamadeColores.png" alt="Gama de Colores">
+                            <img src="img/InstruccionesdeUso.png" alt="Instrucciones de Uso">
+                            <img src="img/Conocenos.png" alt="Conocenos">
                         </div>
                     </div>
                 
@@ -152,30 +168,30 @@
             <div class="lista">
                 <div class="Filas">
                     <div class="item-color">
-                        <img src="Logo.png" alt="Color 1">
+                        <img src="img/Logo.png" alt="Color 1">
                         <p>#FFEFD8</p>
                     </div>
                     <div class="item-color">
-                        <img src="Logo.png" alt="Color 2">
+                        <img src="img/Logo.png" alt="Color 2">
                         <p>#DFBB97</p>
                     </div>
                     <div class="item-color">
-                        <img src="Logo.png" alt="Color 3">
+                        <img src="img/Logo.png" alt="Color 3">
                         <p>#9A7D4F</p>
                     </div>
                 </div>
         
                 <div class="Filas">
                     <div class="item-color">
-                        <img src="Logo.png" alt="Color 4">
+                        <img src="img/Logo.png" alt="Color 4">
                         <p>#FFF2EC</p>
                     </div>
                     <div class="item-color">
-                        <img src="Logo.png" alt="Color 5">
+                        <img src="img/Logo.png" alt="Color 5">
                         <p>#FFDDD4</p>
                     </div>
                     <div class="item-color">
-                        <img src="Logo.png" alt="Color 6">
+                        <img src="img/Logo.png" alt="Color 6">
                         <p>#F3BB9A</p>
                     </div>
                 </div>
@@ -184,7 +200,7 @@
 
         <script>
             const slide = document.querySelector('.carousel-slide');
-            const images = document.querySelectorAll('.carousel-slide img');
+            const images = slide.children;
     
             let contador = 0;
     
