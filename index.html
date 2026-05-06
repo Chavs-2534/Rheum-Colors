@@ -69,11 +69,10 @@
         }
     
         .item-color p {
-            font-family: 'Courier New', Courier, monospace;
             font-weight: bold;
-            color: #333;
             margin: 0;
             letter-spacing: 1px;
+            color: rgb(116, 31, 31);
         }
     
         .carousel-container {
@@ -131,6 +130,37 @@
             display: block;
             flex-shrink: 0;
         }
+
+        details {
+            border-radius: 5px;
+            width: 50%;
+            font-family: sans-serif;
+            transition: all 0.3s ease; 
+            background-color: rgb(116, 31, 31);
+            color: #FFFFFF;
+            }
+
+            summary {
+            font-weight: bold;
+            padding: 10px;
+            cursor: pointer;
+            list-style: none; 
+            }
+
+            summary::before {
+            content: "▶ "; 
+            }
+
+            details[open] summary::before {
+            content: "▼ ";
+            }
+
+            .contenido {
+            padding: 10px;
+            background-color: #f0f0f0;;
+            color: #000000;
+            border-radius: 5px;
+            }
     </style>
 
     <body>
@@ -155,8 +185,6 @@
                                 <img src="img/GamadeColores.png" alt="Gama de Colores"></a>
                             <a href="InstruccionesdeUso.html">
                                 <img src="img/InstruccionesdeUso.png" alt="Instrucciones de Uso"></a>
-                            <a href="Conocenos.html">
-                                <img src="img/Conocenos.png" alt="Conocenos"></a>
                         </div>
                     </div>
                 
@@ -205,11 +233,27 @@
                     </div>
                     <div class="item-color">
                         <a href="colores/CobreSatinado.html">
-                            <img src="img/Logo.png" alt="Cobre Satinado"></a>
-                        <p>#F3BB9A</p>
+                            <img src="colores/imgMuestras/CobreSatinado.png" alt="Cobre Satinado"></a>
+                        <p>Cobre Satinado</p>
                     </div>
                 </div>
             </div>
+
+            <p></p>
+
+            <details>
+                <summary>Integrantes:</summary>
+                <div class="contenido">
+                  <ul>
+                    <li>Integrante 1</li>
+                    <li>Integrante 2</li>
+                    <li>Integrante 3</li>
+                    <li>Integrante 4</li>
+                    <li>Integrante 5</li>
+                  </ul>
+                </div>
+              </details>
+
         </div>
 
         <div class="encabezado">
